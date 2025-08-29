@@ -1,11 +1,55 @@
-<html>
-    <head>
-        <title>Sample Website - AWS CodePipeline Step by Step</title>
-    </head>
-    <body style="text-align:center;font-family:Verdana;margin:1%;">
-        <h1 style="color:navy">Welcome to Our Website!</h1>
-        <hr>
-        <p>This is a simple  , static website that we deploy by creating a pipeline on AWS CodePipeline.</p>
-        <h2>Website Version: 4.0</h2>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Website - AWS CodePipeline Step by Step</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Verdana, sans-serif;
+            margin: 1%;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: navy;
+        }
+        h2 {
+            color: darkgreen;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        #greeting {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Our Website!</h1>
+    <hr>
+    <p>This is a simple static website that we deploy by creating a pipeline on AWS CodePipeline.</p>
+    <h2>Website Version: 4.0</h2>
+
+    <p>Enter your name to get a greeting:</p>
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <button onclick="greetUser()">Greet Me!</button>
+    <div id="greeting"></div>
+
+    <script>
+        function greetUser() {
+            const name = document.getElementById('nameInput').value;
+            if (name.trim() === "") {
+                alert("Please enter your name!");
+            } else {
+                document.getElementById('greeting').innerText = 
+                    `Hello, ${name}! Welcome to Version 4.0 of our website.`;
+            }
+        }
+    </script>
+</body>
 </html>
